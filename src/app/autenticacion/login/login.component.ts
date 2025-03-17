@@ -33,7 +33,7 @@ export class LoginComponent {
 
   iniciarSesion() {
     if (this.loginForm.invalid) {
-      this.required.update(value => true);
+      this.required.set(true);
     } else {
       this.autenticacionService.iniciarSesion(this.loginForm.value).subscribe({
         next: (response) => console.log(response),
