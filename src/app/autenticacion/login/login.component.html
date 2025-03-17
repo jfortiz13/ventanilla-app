@@ -1,0 +1,51 @@
+
+<form role="form" [formGroup]="loginForm" (ngSubmit)="iniciarSesion()">
+  <div class="row">
+      <div class="col-md-4">
+          <label class="control-label  pull-right"
+              for="usuario"><strong>Usuario<span>*</span>:</strong></label>
+      </div>
+      <div class="form-group col-md-5">
+          <div class="input-group">
+              <input appNoEspacios class="form-control" [ngClass]="{ 'form-control-error': loginForm.get('usuario')?.invalid && required() }"
+                  id="usuario" type="text" formControlName="usuario" name="usuario" placeholder="Ingresa tu usuario" maxlength="50">
+                @if(loginForm.get('usuario')?.invalid && required()){
+                    <small class="form-text form-text-error">Este campo es obligatorio</small>
+                }
+              <div class="input-group-addon">
+                  <span class="bootstrap-icons" aria-hidden="true"><i class="bi bi-person"></i></span>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-4">
+          <label class="control-label  pull-right"
+              for="password"><strong>Contraseña<span>*</span>:</strong> </label>
+      </div>
+      <div class="form-group col-md-5">
+          <div class="input-group">
+            <input appNoEspacios class="form-control" [ngClass]="{ 'form-control-error': loginForm.get('contrasenia')?.invalid && required() }"  type="{{ campoTexto() ? 'text' : 'password' }}"
+                 formControlName="contrasenia" placeholder="Ingresa tu contraseña" maxlength="16"/>
+            <div class="input-group-addon btn-password pointer" (click)="onTipoCampo()" >
+              <span class="bootstrap-icons pointer" aria-hidden="true"><i class="bi {{ campoTexto() ? 'bi-eye' : 'bi-eye-slash' }}"></i></span>
+            </div>
+          </div>
+          @if(loginForm.get('contrasenia')?.invalid && required()){
+            <small class="form-text form-text-error">Este campo es obligatorio</small>
+          }
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-9">
+          <button id="id_ingresar" type="submit" class="btn btn-primary pull-right">Acceder</button>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-9 pt-25 clearfix">
+          <div class="pull-right">
+              <a id="recuperar-contraseña" [routerLink]="['/nuevo-password']">Recuperar contraseña</a>
+          </div>
+      </div>
+  </div>
+</form>
