@@ -1,0 +1,53 @@
+.usuario {
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  padding: 10px 16px;
+  position: relative;
+  font-size: 16px;
+  width: 85%;
+}
+
+.usuario a {
+  text-decoration: none !important;
+}
+
+.usuarioEst {
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  padding: 10px 16px;
+  position: relative;
+  font-size: 16px;
+  width: 85%;
+}
+
+.usuarioEst p {
+  margin: 0px 0 4.5px;
+}
+
+.usuarioEst p:first-child {
+  margin-bottom: 4px;
+}
+
+.usuarioEst p:last-child {
+  margin: 0;
+  padding-top: 4px;
+}
+
+.usuario p:first-child {
+  margin-bottom: 4px;
+}
+
+.usuario p:last-child {
+  margin: 0;
+  padding-top: 4px;
+  border-top: 1px solid #dedede !important;
+}
+
+.usuario p a {
+  text-decoration: none;
+}
+
+.usuario p a:hover {
+  text-decoration: underline;
+  color: #12C;
+}

@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, signal, } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterLink, RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AutentificacionService } from '../../compartido/services/autentificacion.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -36,8 +37,17 @@ export class LoginComponent {
       this.required.set(true);
     } else {
       this.autenticacionService.iniciarSesion(this.loginForm.value).subscribe({
-        next: (response) => console.log(response),
-        error: (error) => console.log(error)
+        next: (response) => {
+          console.log("response:",response)
+          this.autenticacionService.storage(response);
+          this.required.set(false);
+          this.router.navigate(['/bienvenidos']);
+          this.autenticacionService.next();
+        },
+        error: (error) => {
+          this.required.set(false);
+          console.error(error)
+        }
       })
     }
   }
