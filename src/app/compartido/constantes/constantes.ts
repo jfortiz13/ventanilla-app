@@ -6,4 +6,5 @@ export class Constantes {
   static NULL = null;
   static TOKEN = 'token';
   static ROL = 'rol';
+  static BREADCRUMB = 'breadcrumb';
 }

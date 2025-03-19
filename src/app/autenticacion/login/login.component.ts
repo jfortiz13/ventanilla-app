@@ -38,7 +38,6 @@ export class LoginComponent {
     } else {
       this.autenticacionService.iniciarSesion(this.loginForm.value).subscribe({
         next: (response) => {
-          console.log("response:",response)
           this.autenticacionService.storage(response);
           this.required.set(false);
           this.router.navigate(['/bienvenidos']);

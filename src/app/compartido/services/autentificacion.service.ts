@@ -50,7 +50,7 @@ export class AutentificacionService {
       this.router.navigate(['/iniciar-sesion']);
   }
 
-  public storage(responseToken: ResponseToken) {console.log(responseToken)
+  public storage(responseToken: ResponseToken) {
     const { token, usuario } = responseToken;
     this._token = token;
     this._usuario = usuario;
