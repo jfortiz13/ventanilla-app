@@ -1,0 +1,6 @@
+<div *ngIf="alertaService.alerta"
+    class="alert alert-dismissible"
+    [ngClass]="alertaService.alerta.tipoAlerta"
+    >
+    <span [innerHTML]="alertaService.alerta.mensaje"></span>
+</div>

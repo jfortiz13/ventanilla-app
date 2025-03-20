@@ -1,0 +1,71 @@
+<app-titulo [pantalla]="pantalla"></app-titulo>
+<label for="correo">Clave del Técnico*:</label>
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-4">
+          <input type="text" class="form-control" [class.form-control-error]="claveTecnico.invalid" id="clave" placeholder="Ingrese la clave del técnico"
+            [formControl]="claveTecnico">
+            @if(claveTecnico.invalid) {
+              <small class="form-text form-text-error">Este campo es obligatorio.</small>
+            }
+        </div>
+        <div class="col-md-8">
+          <button class="btn btn-sm btn-primary" (click)="buscarTecnico()"><i class="bi icon-search"></i> Buscar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mt-4" id="resultado">
+  <div class="card-body">
+    <form>
+      <div class="form-row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="nombre">Clave del Técnico:</label>
+            <input type="text" class="form-control" id="nombre" readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="apellidoPaterno">Nombre(s):</label>
+            <input type="text" class="form-control" id="apellidoPaterno" readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="apellidoPaterno">Apellido Paterno:</label>
+            <input type="text" class="form-control" id="apellidoPaterno" readonly>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="rfc">Apellido Materno:</label>
+            <input type="text" class="form-control" id="rfc" readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="rfc">RFC:</label>
+            <input type="text" class="form-control" id="rfc" readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="correo">Correo Electrónico*:</label>
+            <input type="email" class="form-control" id="correo" readonly>
+          </div>
+        </div>
+      </div>
+      <div class="form-group text-right">
+        <button type="button" class="btn btn-primary" (click)="open()">
+          <i class="span class="></i> Generar código
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

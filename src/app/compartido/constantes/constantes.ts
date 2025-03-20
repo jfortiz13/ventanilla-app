@@ -7,4 +7,5 @@ export class Constantes {
   static TOKEN = 'token';
   static ROL = 'rol';
   static BREADCRUMB = 'breadcrumb';
+  static NOMBRE_APLICACION = 'Sistema de Identificación de Ganado';
 }

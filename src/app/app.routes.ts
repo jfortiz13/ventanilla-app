@@ -10,5 +10,10 @@ export const routes: Routes = [
     loadComponent: () => import('./compartido/componentes/bienvenida/bienvenida.component').then(m => m.BienvenidaComponent),
     data: { breadcrumb: 'Bienvenidos' }
   },
+  {
+    path: "generacion-codigo",
+    loadComponent: () => import('./ventanilla/generacion-folio/generacion-folio.component').then(m => m.GeneracionFolioComponent),
+    data: { breadcrumb: 'Generación de código' }
+  },
   { path: "**", redirectTo : "iniciar-sesion"},
 ];
